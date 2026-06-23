@@ -287,8 +287,10 @@ def count_sentences(text):
     if not text:
         return 0
 
+    #Protection layer: Neutralize abbreviation periods do they dont trick the splitter
+    safe_text = text.replace("Inc." , "Inc").replace("Dr." , "Dr")
     #slicing the text at every terminal punctuation mark.
-    raw_sentences = re.split(r'[.!?]+' , text)
+    raw_sentences = re.split(r'[.!?]+' , safe_text)
 
     #empty list to hold valid sentences
     clean_sentences =  []
