@@ -1,0 +1,13 @@
+name: nlp_news_analyzer
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - jupyter
+  - pandas
+  - numpy
+  - scikit-learn
+  - pip:
+    - matplotlib
